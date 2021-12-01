@@ -157,4 +157,4 @@ Tasks:
 	 - Please, remember that these blogs must be written in English to 
 	   further your technical ability in a variety of settings
 
-	URL: (URL to be added at a later date)
+	URL: https://docs.google.com/document/d/1fvDecO4dGtUOXEu6EGFlDuxyyv6GjQ5zMexld2p2vEo/edit#
