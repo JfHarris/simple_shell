@@ -42,7 +42,7 @@ int exec_comm(char **args, char **av, char **env, int status, int total)
 		{
 			free(args[0]);
 		}
-		free(args);
+		/*free(args);*/
 		waitpid(pid, &state, WUNTRACED);
 	}
 

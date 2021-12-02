@@ -35,9 +35,9 @@ int new_status(char **comm, char **site)
 			return (1);
 		}
 		free(str);
-		free(new);
+	/*	free(new);*/
 	}
-	free(site[0]);
+	/*free(site[0]);*/
 	free(site);
 	return (0);
 }

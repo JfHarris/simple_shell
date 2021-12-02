@@ -35,9 +35,9 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 			status = new_status(args, path);
 			exec_comm(av, args, env, status, count);
 		}
-		else
+		/*else
 			free(args);
-		free(line);
+		free(line);*/
 	}
 
 	return (EXIT_SUCCESS);
