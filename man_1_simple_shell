@@ -1,0 +1,24 @@
+.TH SIMPLE_SHELL 1 2021-12-02 GNU
+
+.SH NAME
+hsh \- simple_shell
+
+.SH SYNOPSIS
+.B hsh
+
+.SH DESCRIPTION
+.B hsh
+Simple command interpreter for Linux. Built for a school assignment. 
+Capable of executing basic commands. Not considered a suitable replacement
+for the bash shell.
+
+.SH BUILTINS
+.TP
+.BR help
+displays help information.
+.TP
+.BR PATH
+displays PATH
+.TP
+.BR exit
+exits the shell.
