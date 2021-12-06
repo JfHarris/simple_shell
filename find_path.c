@@ -2,40 +2,51 @@
 
 /**
  * find_path - finds path for commands
- *@ourpath: command
  *
- * Return: Always 0.
+ *
+ * Return: pointer to path.
  */
 
-char **find_path(char *ourpath)
+char **find_path(void)
 {
-	int buff = 64;
-	char **move = _calloc(sizeof(char *), buff);
-	char *new = NULL;
-	char *path = ":=";
-	char *token = NULL;
-	int x;
+	char path[] = "PATH=";
+	char colon[] = ":";
+	char **newpath;
+	char *nopath = "nopath";
+	size_t x = 0;
+	size_t y = 0;
+	size_t test = 0;
 
-	x = 0;
-
-	if (ourpath == NULL)
+	while (environ[x] != NULL)
 	{
-		free(ourpath);
-		return (0);
+		test = 0;
+		while (environ[x][y] == path[y] && path[y] != '\0')
+		{
+			y++;
+			test++;
+		}
+		if (test == 5)
+		{
+			newpath = parse_inp(&environ[x][y], colon);
+			if (newpath == NULL)
+			{
+				return (NULL);
+			}
+			return (newpath);
+		}
+		else
+		{
+			y = 0;
+		}
+		x++;
 	}
-	if (move == NULL)
+	newpath = malloc(sizeof(char) * (_strlen(newpath) + 1));
+	if (newpath[0] == NULL)
 	{
-		free(ourpath);
-		perror("Error");
+		free(newpath);
 		return (NULL);
 	}
-	new = _strdup(ourpath);
-	token = strtok(new, path);
-	while (token != NULL)
-	{
-		move[x] = token;
-		x++;
-		token = strtok(NULL, path);
-	}
-	return (move);
+	newpath[0] = _strdup(nopath, newpath[0]);
+	newpath[1] = NULL;
+	return (newpath);
 }
