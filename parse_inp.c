@@ -12,7 +12,7 @@ char **parse_inp(char *line, char **env)
 {
 	char **tokens;
 	char *token;
-	int buff = 64;
+	int buff = SIZE_BUFF;
 	int x;
 
 	x = 0;

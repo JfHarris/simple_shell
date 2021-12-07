@@ -24,8 +24,8 @@ int new_status(char **comm, char **site)
 	}
 	for (x = 0 ; site[x] != NULL ; x++)
 	{
-		str = _strcat(site[x], "/");
-		new = _strcat(str, comm[0]);
+		str = str_concat(site[x], "/");
+		new = str_concat(str, comm[0]);
 		if (stat(new, &a) == 0 && (a.st_mode & S_IXUSR))
 		{
 			comm[0] = new;
@@ -34,8 +34,8 @@ int new_status(char **comm, char **site)
 			free(site);
 			return (1);
 		}
-	/*	free(str);*/
-	/*	free(new);*/
+		free(str);
+		free(new);
 	}
 	free(site[0]);
 	free(site);

@@ -4,14 +4,13 @@
  *@s: pointer
  * Return: Always 0.
  */
-int _strlen(char *s)
+int _strlen(const char *s)
 {
-	int count = 0;
+	int x = 0;
 
-	while (*s != '\0')
+	while (s[x] != '\0')
 	{
-		count++;
-		s++;
+		x++;
 	}
-	return (count);
+	return ((x + 1));
 }
