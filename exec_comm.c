@@ -31,7 +31,6 @@ int exec_comm(char **args, char **av, char **env, int status, int total)
 		if (execve(args[0], args, env) == -1)
 		{
 			_error(av[0], total, args[0]);
-			free(args);
 			exit(1);
 		}
 		exit(0);
@@ -40,9 +39,8 @@ int exec_comm(char **args, char **av, char **env, int status, int total)
 	{
 		if (status == 1)
 		{
-			free(args[0]);
+			;
 		}
-		free(args);
 		waitpid(pid, &state, WUNTRACED);
 	}
 
